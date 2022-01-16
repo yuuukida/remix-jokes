@@ -47,7 +47,7 @@ export default function JokesScreen() {
               <span className="logo-medium">J🤪KES</span>
             </Link>
           </h1>
-          {data.user ? (
+          {data?.user ? (
             <div className="user-info">
               <span>{`Hi ${data.user.username}`}</span>
               <Form action="/logout" method="post">
@@ -69,7 +69,7 @@ export default function JokesScreen() {
                 <Link to=".">Get a random joke</Link>
                 <p>Here are a few more jokes to check out:</p>
                 <ul>
-                  {data.jokeListItems.map(({ id, name }) => (
+                  {data?.jokeListItems.map(({ id, name }) => (
                     <li key={id}>
                       <Link to={id} prefetch="intent">
                         {name}
